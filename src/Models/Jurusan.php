@@ -1,14 +1,14 @@
 <?php
-namespace SMKApp\Models;
+namespace SMKApp\Models; //namespace
 
 /**
  * Kelas Jurusan yang meng-extends Model
  * Memanfaatkan inheritance, polymorphism (method search override)
  * dan enkapsulasi private properti dengan getter/setter
  */
-class Jurusan extends Model
+class Jurusan extends Model //inheritance = pewarisan
 {
-    private ?int $id = null;
+    private ?int $id = null; //encapsulation
     private string $nama;
 
     protected string $table = 'jurusan';
@@ -21,7 +21,7 @@ class Jurusan extends Model
     /**
      * Override method search untuk mencari jurusan berdasarkan nama
      */
-    public function search(string $keyword): array
+    public function search(string $keyword): array //polimorfisme
     {
         $keyword = "%{$keyword}%";
         $stmt = $this->conn->prepare("SELECT * FROM {$this->table} WHERE nama LIKE ?");

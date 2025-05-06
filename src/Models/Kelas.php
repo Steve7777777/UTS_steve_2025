@@ -1,13 +1,13 @@
 <?php
-namespace SMKApp\Models;
+namespace SMKApp\Models; //namespace
 
 /**
  * Kelas Kelas yang meng-extends Model
  * Melibatkan enkapsulasi serta override method search (polymorphism)
  */
-class Kelas extends Model
+class Kelas extends Model //inheritance = pewarisan
 {
-    private ?int $id = null;
+    private ?int $id = null; //encapsulation
     private string $nama;
     private int $jurusan_id;
 
@@ -21,7 +21,7 @@ class Kelas extends Model
     /**
      * Mencari kelas berdasarkan nama (polymorphism)
      */
-    public function search(string $keyword): array
+    public function search(string $keyword): array //polimorfisme
     {
         $keyword = "%{$keyword}%";
         $stmt = $this->conn->prepare("SELECT * FROM {$this->table} WHERE nama LIKE ?");

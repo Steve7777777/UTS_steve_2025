@@ -1,5 +1,5 @@
 <?php
-namespace SMKApp\Models;
+namespace SMKApp\Models; //namespace
 
 /**
  * Kelas Model abstrak dasar sebagai parent untuk model spesifik
